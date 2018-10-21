@@ -1,0 +1,70 @@
+.Photo-item {
+    height: 300px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid white;
+
+    img {
+        position: absolute;
+        width: auto;
+        transform: translate(-50%, -50%);
+        max-width: inherit;
+        transform: scale(1);
+        transition: transform .3s ease-out;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+
+.modal-photo {
+
+    &.reveal {
+        width: max-content;
+    }
+
+    .Modal-content {
+        padding: 0;
+        margin-top: 40px;
+
+        .close-button {
+            ont-size: 3em;
+            line-height: 0.5;
+            top: 0px;
+            right: 0;
+            background-color: white;
+            padding: 5px 5px;
+            height: 44px;
+            width: 40px;
+
+            span {
+                display: block;
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    img {
+        max-height: 90vh;
+        width: auto;
+        border: 10px solid white;
+    }
+}
+
+.reveal-overlay {
+    overflow: hidden !important;
+}
+
+@include breakpoint(medium down) {
+    .modal-photo {
+        &.reveal {
+            width: 100%;
+            margin-top: 100px;
+        }
+    }
+}

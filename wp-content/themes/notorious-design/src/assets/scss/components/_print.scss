@@ -1,0 +1,126 @@
+.Print-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 100px;
+
+    &.even {
+        .Print-item-image-wrap {
+            order: 2;
+        }
+
+        .Print-item-body {
+            order: 1;
+            margin-right: -50px;
+        }
+    }
+    
+
+    &-image-wrap {
+        text-align: center;
+    }
+
+    &-image {
+        min-width: 330px;
+    }
+
+    &-body {
+        padding: 40px 40px 70px 40px;
+        background-color: white;
+        margin-left: -50px;
+        box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.05);
+        position: relative;
+    }
+
+    &-button {
+        color: black;
+        text-transform: uppercase;
+        font-size: 14px;
+        position: relative;
+        transition: all .3s ease-out;
+        padding: 5px 15px;
+        position: absolute;
+        bottom: 30px;
+        right: 50px;
+
+        &::after,
+        &::before {
+            transition: all .3s ease-out;
+            border-color: black !important;
+            position: absolute;
+            top: 0;
+            content: '';
+            width: 8px;
+            height: 100%;
+            display: inline-block;
+            opacity: 0;
+            
+        }
+
+        &::after {
+            border-top: solid 1px;
+            border-right: solid 1px;
+            border-bottom: solid 1px;
+            right: 0;
+            transform: translateX(10px);
+        }
+
+        &::before {
+            border-left: solid 1px;
+            border-top: solid 1px;
+            border-bottom: solid 1px;
+            left: 0;
+            transform: translateX(-10px);
+        }
+
+        &:hover {
+            color: #5d5d5d;
+
+            &::after {
+                opacity: 1;
+                right: 0;
+                transform: translateX(0);
+            }
+
+            &::before {
+                opacity: 1;
+                left: 0;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+.modal-print {
+    .Modal-content {
+        background-color: transparent;
+        max-height: 90vh;
+        width: max-content;
+        padding: 0;
+        margin: 0 auto;
+
+        .close-button {
+            height: 40px;
+            width: 40px;
+            top: 0;
+            right: 0;
+            background-color: white;
+        }
+
+        img {
+            max-height: 85vh;
+            border: 10px solid white;
+        }
+    }
+}
+
+.Print-gallery-item {
+    padding: 10px;
+}
+
+@include breakpoint(medium down) {
+    .print-single {
+        padding-top: 60px;
+    }
+}

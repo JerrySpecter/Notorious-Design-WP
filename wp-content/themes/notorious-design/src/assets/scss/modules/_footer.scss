@@ -1,0 +1,27 @@
+.footer-container {
+  border-top: 1px solid $medium-gray;
+  margin-top: rem-calc(60);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-grid {
+  @include xy-grid;
+  padding: rem-calc(30) 0;
+
+  section {
+    @include xy-cell();
+    @include breakpoint(large) {
+      @include xy-cell(auto);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
