@@ -15,6 +15,8 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<?php wp_head(); ?>
+		<link rel="stylesheet" href="wp-content/themes/notorious-design/dist/assets/css/app.css">
+		<script src="wp-content/themes/notorious-design/dist/assets/js/app.js"></script>
 	</head>
 	<body <?php body_class(); ?>>
 
